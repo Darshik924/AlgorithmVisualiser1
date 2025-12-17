@@ -1,0 +1,36 @@
+.box {
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 5px;
+  color: indigo;
+  height: 40px;
+  margin-top: 15px;
+  border-radius: 15%;
+  font-size: large;
+  font-weight: 500;
+  font-family: sans-serif;
+  width: 42px;
+
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.minfound {
+  background-color: red;
+  border: 3px solid darkred;
+  color: white;
+}
+
+.pending {
+  background-color: aqua;
+  border: 3px solid blue;
+}
+
+.sorted {
+  background-color: lightgreen;
+  border: 3px solid darkgreen;
+}
+
+.comparing {
+  background-color: lightyellow;
+  border: 3px solid yellow;
+}
