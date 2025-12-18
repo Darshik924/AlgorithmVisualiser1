@@ -174,16 +174,82 @@ async function selectionSort() {
   boxes[n - 1].classList.remove("pending");
 }
 
-async function quickSort() {
-  
+async function quickSort(low, high) {
+  let boxes = document.querySelectorAll(".box");
+
+  if (low < high) {
+    let pi = await partition(low, high);
+
+    // Recursively sort elements before partition and after partition
+    await quickSort(low, pi - 1);
+    await quickSort(pi + 1, high);
+  } else {
+    if (low >= 0 && low < boxes.length && low === high) {
+      boxes[low].classList.remove("pending");
+      boxes[low].classList.add("sorted");
+    }
+  }
 }
 
-startbtn.addEventListener("click", () => {
-  if (choice === "bubble") {
-    bubbleSort();
-  } else if (choice === "selection") {
-    selectionSort();
-  } else if (choice === "quick") {
-    quickSort();
+async function partition(low, high) {
+  let boxes = document.querySelectorAll(".box");
+
+  let pivotIndex = high;
+  let pivotValue = parseInt(boxes[pivotIndex].textContent);
+
+  boxes[pivotIndex].classList.add("pivot");
+  boxes[pivotIndex].classList.remove("pending");
+  await delay(DELAY);
+
+  let i = low - 1;
+
+  for (let j = low; j < high; j++) {
+    boxes[j].classList.add("comparing");
+    boxes[j].classList.remove("pending");
+    await delay(DELAY);
+
+    let currentValue = parseInt(boxes[j].textContent);
+
+    if (currentValue < pivotValue) {
+      i++;
+      if (i !== j) {
+        boxes[i].classList.add("comparing");
+        await delay(DELAY);
+        await swap(boxes[i], boxes[j]);
+        boxes[i].classList.remove("comparing");
+      }
+    }
+
+    boxes[j].classList.remove("comparing");
+    boxes[j].classList.add("pending");
+    await delay(DELAY);
   }
+
+  if (i + 1 !== high) {
+    await swap(boxes[i + 1], boxes[high]);
+  }
+
+  boxes[high].classList.remove("pivot");
+  boxes[high].classList.add("pending");
+
+  boxes[i + 1].classList.remove("pending");
+  boxes[i + 1].classList.remove("pivot");
+  boxes[i + 1].classList.add("sorted");
+
+  await delay(DELAY);
+
+  return i + 1;
+}
+
+startbtn.addEventListener("click", async () => {
+  startbtn.disabled = true;
+  if (choice === "bubble") {
+    await bubbleSort();
+  } else if (choice === "selection") {
+    await selectionSort();
+  } else if (choice === "quick") {
+    let boxes = document.querySelectorAll(".box");
+    await quickSort(0, boxes.length - 1);
+  }
+  startbtn.disabled = false;
 });

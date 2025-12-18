@@ -34,3 +34,13 @@
   background-color: lightyellow;
   border: 3px solid yellow;
 }
+
+.pivot {
+  background-color: pink;
+  border: 3px solid #db0067;
+  color: indigo;
+}
+
+.active-range {
+  background-color: lightblue;
+}
