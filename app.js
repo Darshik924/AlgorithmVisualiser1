@@ -179,8 +179,6 @@ async function quickSort(low, high) {
 
   if (low < high) {
     let pi = await partition(low, high);
-
-    // Recursively sort elements before partition and after partition
     await quickSort(low, pi - 1);
     await quickSort(pi + 1, high);
   } else {
