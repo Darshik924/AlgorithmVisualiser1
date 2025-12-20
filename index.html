@@ -4,111 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Algo</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
     <header class="head">
-      <div class="navbar h-14 bg-red-900 text-[35px] font-bold font m-0 w-full">
-        <ul class="tabs flex text-teal-400 justify-around">
+      <div class="navbar">
+        <ul class="tabs">
           <li class="tab"><a href="#">Algorithm Visualiser</a></li>
         </ul>
       </div>
     </header>
-    <br />
+
+    <div class="spacer"></div>
+
     <article class="choose-algo">
-      <div class="font-bold text-[40px] text-red-800 title flex justify-center">
-        <h1 class="px-2 border-4 border-black rounded-sm">
-          Choose Your Algorithm
-        </h1>
+      <div class="title-container">
+        <h1 class="main">Choose Your Algorithm</h1>
       </div>
-      <br /><br />
+
+      <div class="spacer"></div>
+
       <div class="choose">
-        <ul class="flex justify-around flex-row text-lg">
-          <div class="tab">
-            <button
-              class="bubble text-2xl w-[190px] h-[80px] font-serif font-sans hover:text-teal-400 px-4 py-2 hover:cursor-pointer hover:bg-indigo-800 bg-indigo-600 text-white rounded-md"
-            >
-              Bubble Sort
-            </button>
-          </div>
-          <div class="tab">
-            <button
-              class="selection text-2xl w-[190px] h-[80px] font-serif font-sans hover:text-teal-400 px-4 py-2 h-[37px] hover:cursor-pointer hover:bg-indigo-800 bg-indigo-600 text-white rounded-md"
-            >
-              Selection Sort
-            </button>
-          </div>
-          <div class="tab">
-            <button
-              class="quick text-2xl w-[190px] h-[80px] font-serif font-sans hover:text-teal-400 px-4 py-2 h-[37px] hover:cursor-pointer hover:bg-indigo-800 bg-indigo-600 text-white rounded-md"
-            >
-              Quick Sort
-            </button>
-          </div>
+        <ul>
+          <li class="tab">
+            <button class="algo-btn bubble">Bubble Sort</button>
+          </li>
+          <li class="tab">
+            <button class="algo-btn selection">Selection Sort</button>
+          </li>
+          <li class="tab">
+            <button class="algo-btn quick">Quick Sort</button>
+          </li>
         </ul>
       </div>
     </article>
-    <br /><br />
+
+    <div class="spacer"></div>
+
     <article class="datainput">
-      <div class="flex justify-center">
-        <div class="length flex border-black rounded-md">
-          <h3
-            class="p-3 bg-green-900 rounded-md text-white font-bold text-[29px]"
-          >
-            Enter Array Details
-          </h3>
+      <div class="group">
+        <div class="in-wrap">
+          <h3 class="in-label label-green">Enter Array Details</h3>
           <textarea
-            class="p-3 bg-azure input-length border-2 border-black rounded-md"
+            class="cust-text input-length"
             name="message"
             rows="2"
             cols="10"
-            placeholder="Enter length of Array"
+            placeholder="Enter length"
           ></textarea>
         </div>
       </div>
-      <br /><br />
 
-      <div class="flex justify-center">
-        <div class="content flex">
-          <h3
-            class="p-3 bg-pink-900 rounded-md text-white font-bold text-[29px]"
-          >
-            Enter Array contents
-          </h3>
+      <div class="group">
+        <div class="in-wrap">
+          <h3 class="in-label label-pink">Enter Array contents</h3>
           <textarea
-            class="input-content p-3 bg-azure border-2 border-black rounded-md"
+            class="cust-text input-content"
             name="message"
             rows="3"
             cols="70"
-            placeholder="Enter the Array elements with space"
+            placeholder="Enter elements with space"
           ></textarea>
         </div>
       </div>
     </article>
-    <br /><br />
-    <div class="submit flex justify-center">
-      <button
-        class="px-4 py-2 submit-value bg-teal-500 hover:bg-teal-700 hover:cursor-pointer text-white rounded-md"
-      >
-        Go
-      </button>
+
+    <div class="act-btn">
+      <button class="btn-teal submit-value">Go</button>
     </div>
 
-    <div
-      class="container pl-[32px] pr-[32px] w-[1375px] mx-auto bg-amber-500 rounded-md h-[70px] flex justify-between border-3 border-red-900 round-ss"
-    >
-      <!-- Container for the Display of Animations -->
-    </div>
-    <br /><br />
+    <div class="animation-container container"></div>
 
-    <article class="flex justify-center">
-      <button
-        class="start-sort hover:cursor-pointer p-3 text-white bg-teal-500 hover:bg-teal-700 rounded-md"
-      >
+    <div class="spacer"></div>
+
+    <article class="act-btn">
+      <button class="btn-teal start-sort" style="padding: 0.75rem">
         START SORTING
       </button>
     </article>
+
     <script src="app.js"></script>
   </body>
 </html>
