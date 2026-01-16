@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,10 +9,9 @@ body {
   background-color: #fff;
 }
 
-
 .navbar {
   height: 3.5rem;
-  background-color: #7f1d1d; 
+  background-color: #7f1d1d;
   font-size: 35px;
   font-weight: bold;
   width: 100%;
@@ -23,7 +21,7 @@ body {
 
 .tabs {
   display: flex;
-  color: #2dd4bf; 
+  color: #2dd4bf;
   justify-content: space-around;
   list-style: none;
   width: 100%;
@@ -33,7 +31,6 @@ body {
   text-decoration: none;
   color: inherit;
 }
-
 
 .choose-algo {
   margin-top: 1rem;
@@ -61,34 +58,54 @@ body {
   list-style: none;
   padding: 0;
 }
-@media screen and (max-width:800px){
+@media screen and (max-width: 800px) {
   .choose ul {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.125rem;
+    list-style: none;
+    padding: 0;
+  }
+  .title-container {
+    font-size: 1.5rem;
+  }
+  .animation-container {
+    width: 75%;
+    height: 100px;
+    margin: 0 auto;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    background-color: #f59e0b;
+    border: 3px solid #7f1d1d;
+    border-radius: 0.375rem;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.125rem;
+
+    position: relative;
+  }
+  .box {
+  padding-left: 0;
+  padding-right: 0;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  gap:1.5rem;
-  font-size: 1.125rem;
-  list-style: none;
-  padding: 0;
- }
- .title-container {
-  font-size: 1.5rem;
- }
- .animation-container {
-  width: 75%;
-  height: 100px; 
-  margin: 0 auto;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  background-color: #f59e0b; 
-  border: 3px solid #7f1d1d;
-  border-radius: 0.375rem;
-  display: flex;
-  
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  
+
+  color: indigo;
+  height: 2rem;
+  width: 2rem;
+  margin-top: 0;
+
+  border-radius: 15%;
+  font-size: large;
+  font-weight: 500;
+  font-family: sans-serif;
+
+  transition: background-color 0.3s ease, transform 0.3s ease;
   position: relative;
 }
 
@@ -101,7 +118,7 @@ body {
   font-family: serif;
   padding: 0.5rem 1rem;
   color: white;
-  background-color: #4f46e5; 
+  background-color: #4f46e5;
   border: none;
   border-radius: 0.375rem;
   cursor: pointer;
@@ -112,7 +129,6 @@ body {
   color: #2dd4bf;
   background-color: #3730a3;
 }
-
 
 .datainput {
   margin-top: 2rem;
@@ -128,7 +144,7 @@ body {
   display: flex;
   border: 1px solid black;
   border-radius: 0.375rem;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .in-label {
@@ -141,23 +157,22 @@ body {
 }
 
 .label-green {
-  background-color: #14532d; 
+  background-color: #14532d;
 }
 
 .label-pink {
-  background-color: #831843; 
+  background-color: #831843;
 }
 
 .cust-text {
   padding: 0.75rem;
-  background-color: #f0ffff; 
+  background-color: #f0ffff;
   border: none;
   border-left: 2px solid black;
   font-family: inherit;
   font-size: 1rem;
   outline: none;
 }
-
 
 .act-btn {
   display: flex;
@@ -181,18 +196,17 @@ body {
   background-color: #0f766e;
 }
 
-
 .animation-container {
   width: 75%;
-  height: 100px; 
+  height: 100px;
   margin: 0 auto;
   padding-left: 32px;
   padding-right: 32px;
-  background-color: #f59e0b; 
+  background-color: #f59e0b;
   border: 3px solid #7f1d1d;
   border-radius: 0.375rem;
   display: flex;
-  
+
   justify-content: center;
   align-items: center;
   gap: 35px;
@@ -200,7 +214,7 @@ body {
 }
 
 .box {
-  padding-left: 0; 
+  padding-left: 0;
   padding-right: 0;
   display: flex;
   justify-content: center;
@@ -217,7 +231,7 @@ body {
   font-family: sans-serif;
 
   transition: background-color 0.3s ease, transform 0.3s ease;
-  position: relative; 
+  position: relative;
 }
 
 .minfound {
